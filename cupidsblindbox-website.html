@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupid's Blind Box - Find Your Perfect Match | Love Compatibility Test</title>
+    <meta name="description" content="Discover your perfect match with Cupid's Blind Box. Our advanced compatibility test analyzes your preferences to find your ideal partner. Try our love compatibility scanner today!">
+    <link rel="canonical" href="https://cupidsblindbox.xyz" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF69B4',
+                        secondary: '#FFB6C1',
+                        accent: '#FFC0CB'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="text-2xl font-bold text-primary">Cupid's Blind Box</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-primary">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-primary">How It Works</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-primary">Testimonials</a>
+                <a href="#faq" class="text-gray-600 hover:text-primary">FAQ</a>
+            </div>
+            <button class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-gradient-to-b from-pink-50 to-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">Find Your Perfect Match with Cupid's Blind Box</h1>
+                <p class="text-xl text-gray-600 mb-12">Discover your ideal partner through our advanced compatibility test. Let science guide your heart to true love.</p>
+                <button id="startMatchBtn" class="bg-primary hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105 mb-12">
+                    Start Your Love Match
+                </button>
+                <div id="matchForm" class="hidden bg-white rounded-2xl shadow-xl p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-8 text-center">Find Your Perfect Match</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Your Information -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-primary mb-4">Your Information</h3>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Gender</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Height (cm)</label>
+                                <input type="number" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="e.g. 175">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Weight (kg)</label>
+                                <input type="number" class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="e.g. 65">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Education</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>High School</option>
+                                    <option>Bachelor's Degree</option>
+                                    <option>Master's Degree</option>
+                                    <option>PhD</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Annual Income</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>Below $30,000</option>
+                                    <option>$30,000 - $50,000</option>
+                                    <option>$50,000 - $100,000</option>
+                                    <option>Above $100,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Country</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Canada</option>
+                                    <option>Australia</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Partner Preferences -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-primary mb-4">Partner Preferences</h3>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Preferred Gender</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>No Preference</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Preferred Height Range (cm)</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="number" class="p-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="Min">
+                                    <input type="number" class="p-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="Max">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Preferred Weight Range (kg)</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <input type="number" class="p-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="Min">
+                                    <input type="number" class="p-3 border rounded-lg focus:ring-2 focus:ring-primary" placeholder="Max">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Minimum Education</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>High School</option>
+                                    <option>Bachelor's Degree</option>
+                                    <option>Master's Degree</option>
+                                    <option>PhD</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Minimum Annual Income</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>Below $30,000</option>
+                                    <option>$30,000 - $50,000</option>
+                                    <option>$50,000 - $100,000</option>
+                                    <option>Above $100,000</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Preferred Country</label>
+                                <select class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-primary">
+                                    <option>Any Country</option>
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Canada</option>
+                                    <option>Australia</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <button id="calculateMatchBtn" class="bg-primary hover:bg-pink-600 text-white font-bold py-4 px-8 rounded-full text-lg transition-all transform hover:scale-105">
+                            Calculate Compatibility
+                        </button>
+                    </div>
+                </div>
+                <div id="matchResult" class="hidden bg-white rounded-2xl shadow-xl p-8 mb-12">
+                    <h2 class="text-2xl font-bold mb-8 text-center">Your Compatibility Results</h2>
+                    <div class="space-y-6">
+                        <div class="text-center">
+                            <div class="text-6xl font-bold text-primary mb-4">85%</div>
+                            <p class="text-xl text-gray-600">Compatibility Score</p>
+                        </div>
+                        <div class="bg-pink-50 p-6 rounded-xl">
+                            <h3 class="text-xl font-semibold mb-4">Detailed Analysis</h3>
+                            <ul class="space-y-4 text-gray-600">
+                                <li>• Based on your criteria, only 12% of males in your country match your partner preferences</li>
+                                <li>• Your ideal partner profile matches 15% of females in the target country</li>
+                                <li>• Your compatibility score indicates a strong potential for a long-term relationship</li>
+                                <li>• Key matching factors: Education level, Income range, and Cultural background</li>
+                            </ul>
+                        </div>
+                        <div class="text-center">
+                            <button id="tryAgainBtn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold py-3 px-6 rounded-full text-lg transition-all">
+                                Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-12">
+                    <iframe src="https://Love Compatibility Scanner/games/2025/unity/cupidsblindbox/index-og.html" 
+                            class="w-full h-[600px] rounded-lg" 
+                            frameborder="0" 
+                            allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Why Choose Cupid's Blind Box?</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-xl bg-pink-50">
+                    <h3 class="text-xl font-semibold mb-4">Advanced Algorithm</h3>
+                    <p class="text-gray-600">Our sophisticated matching system analyzes multiple compatibility factors to find your perfect match.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-pink-50">
+                    <h3 class="text-xl font-semibold mb-4">Global Database</h3>
+                    <p class="text-gray-600">Access a diverse pool of potential matches from around the world.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-pink-50">
+                    <h3 class="text-xl font-semibold mb-4">Privacy First</h3>
+                    <p class="text-gray-600">Your data is protected with enterprise-grade security measures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">How It Works</h2>
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">1</div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-semibold mb-2">Enter Your Details</h3>
+                            <p class="text-gray-600">Fill in your personal information and preferences to create your profile.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">2</div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-semibold mb-2">Set Partner Criteria</h3>
+                            <p class="text-gray-600">Specify your ideal partner's characteristics and requirements.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold">3</div>
+                        <div class="ml-6">
+                            <h3 class="text-xl font-semibold mb-2">Get Your Results</h3>
+                            <p class="text-gray-600">Receive detailed compatibility analysis and match percentage.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Success Stories</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 rounded-xl bg-pink-50">
+                    <p class="text-gray-600 mb-4">"Thanks to Cupid's Blind Box, I found my soulmate. The compatibility test was incredibly accurate!"</p>
+                    <p class="font-semibold">- Sarah & Michael, Married 2 years</p>
+                </div>
+                <div class="p-6 rounded-xl bg-pink-50">
+                    <p class="text-gray-600 mb-4">"The detailed analysis helped me understand what I really wanted in a partner. Life-changing!"</p>
+                    <p class="font-semibold">- Emma & James, Engaged</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+            <div class="max-w-3xl mx-auto space-y-6">
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-2">How accurate is the compatibility test?</h3>
+                    <p class="text-gray-600">Our algorithm analyzes multiple factors including personality traits, values, and lifestyle preferences to provide highly accurate compatibility results.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-2">Is my personal information secure?</h3>
+                    <p class="text-gray-600">Yes, we use industry-standard encryption and security measures to protect your data.</p>
+                </div>
+                <div class="bg-white rounded-xl p-6">
+                    <h3 class="text-xl font-semibold mb-2">Can I retake the test?</h3>
+                    <p class="text-gray-600">Yes, you can retake the test as many times as you want to refine your preferences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Cupid's Blind Box</h3>
+                    <p class="text-gray-400">Find your perfect match with our advanced compatibility test.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="text-gray-400 hover:text-white">Features</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white">How It Works</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white">Testimonials</a></li>
+                        <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact</h3>
+                    <p class="text-gray-400">Email: support@cupidsblindbox.xyz</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Cupid's Blind Box. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const startMatchBtn = document.getElementById('startMatchBtn');
+        const matchForm = document.getElementById('matchForm');
+        const calculateMatchBtn = document.getElementById('calculateMatchBtn');
+        const matchResult = document.getElementById('matchResult');
+        const tryAgainBtn = document.getElementById('tryAgainBtn');
+
+        startMatchBtn.addEventListener('click', function() {
+            matchForm.classList.remove('hidden');
+            startMatchBtn.classList.add('hidden');
+        });
+
+        calculateMatchBtn.addEventListener('click', function() {
+            matchForm.classList.add('hidden');
+            matchResult.classList.remove('hidden');
+        });
+
+        tryAgainBtn.addEventListener('click', function() {
+            matchResult.classList.add('hidden');
+            matchForm.classList.remove('hidden');
+        });
+    });
+    </script>
+</body>
+</html> 
